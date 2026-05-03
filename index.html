@@ -119,55 +119,6 @@
   }
   a:hover { border-bottom-color: var(--accent); }
 
-  /* Three-layer architecture diagram */
-  .diagram {
-    margin: 32px 0 36px;
-    border: 1px solid var(--border);
-    background: var(--panel);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .layer {
-    display: flex;
-    align-items: stretch;
-    border-bottom: 1px solid var(--border);
-    background: var(--panel);
-  }
-  .layer:last-child { border-bottom: none; }
-  .layer-bar {
-    flex: 0 0 6px;
-    background: var(--accent);
-  }
-  .layer.top .layer-bar { background: var(--accent); }
-  .layer.middle .layer-bar { background: var(--accent-mid); }
-  .layer.bottom .layer-bar { background: var(--accent-light); }
-  .layer-body {
-    flex: 1;
-    padding: 18px 22px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 18px;
-  }
-  .layer-label {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink);
-    font-weight: 700;
-    flex: 0 0 auto;
-    min-width: 140px;
-  }
-  .layer-desc {
-    font-family: Georgia, serif;
-    font-size: 15px;
-    color: var(--ink-muted);
-    font-style: italic;
-    flex: 1 1 240px;
-    line-height: 1.55;
-  }
-
   /* Pull-quote */
   .pullquote {
     margin: 36px 0;
@@ -244,8 +195,6 @@
     section + section { margin-top: 52px; }
     h2 { font-size: 21px; }
     .pullquote { font-size: 19px; padding-left: 18px; }
-    .layer-body { padding: 16px 18px; }
-    .layer-label { min-width: 100%; }
     .portrait-wrap {
       float: none;
       width: 160px;
@@ -269,40 +218,16 @@
 <main class="container">
 
   <section>
-    <p class="lead">AI image generators got too cheap and too good. The 2024 to 2026 election cycle, the wars in Gaza and Ukraine, and the AI-generated and misattributed images that flooded coverage of Maduro's capture in Venezuela all surfaced the same problem. Platforms can't be trusted to also be the arbiters of what's real on them. Newsrooms verify what reaches their desks; nothing covers the rest. Someone has to build the layer that anchors truth when everything else fails, and it has to be independent, auditable, and accountable, because the trustworthiness of attestations depends on the independence of the process that produces them.</p>
+    <p class="lead">The cost of generating a believable photograph has collapsed, and the technical skill required has gone with it. The 2024 to 2026 election cycle, the wars in Gaza and Ukraine, and the AI-generated and misattributed images that flooded coverage of Maduro's capture in Venezuela revealed the same gap: no institution is responsible for adjudicating what is real about the images that shape public understanding. The platforms hosting those images benefit from their virality and cannot credibly arbitrate them. Newsrooms verify what reaches their desks; nothing covers the rest. The institution that fills this gap has to be built, and it has to be independent, auditable, and accountable, because an attestation is only as trustworthy as the process that produced it.</p>
   </section>
 
   <section>
     <p class="marker">I.</p>
     <h2>What I'm building</h2>
 
-    <p>Image Trust Protocol is a verification API. Integrators (AI agents, browser extensions, content-provenance vendors, downstream AI products) call it when their users ask whether a photograph is real or whether a claim attached to it holds. The API returns a synthesized verdict: aggregated public fact-check data underneath, original verdicts from credentialed specialists on top, every record signed and recorded on a public ledger.</p>
+    <p>Image Trust Protocol is a verification API for images and the claims attached to them. Integrators (AI agents, browser extensions, content-provenance vendors, downstream AI products) call it whenever their users need to know whether a photograph is authentic, or whether the claim attached to it is accurate. Verdicts come from credentialed specialists, are synthesized into a single response, and are signed and committed to a public ledger.</p>
 
-    <div class="diagram" aria-label="Three-layer architecture: specialist verdicts on top, synthesis in the middle, aggregation at the base">
-      <div class="layer top">
-        <div class="layer-bar"></div>
-        <div class="layer-body">
-          <span class="layer-label">Specialist verdicts</span>
-          <span class="layer-desc">signed by credentialed practitioners, recorded on a public ledger</span>
-        </div>
-      </div>
-      <div class="layer middle">
-        <div class="layer-bar"></div>
-        <div class="layer-body">
-          <span class="layer-label">Synthesis</span>
-          <span class="layer-desc">consensus weighting, confidence score, machine-readable response</span>
-        </div>
-      </div>
-      <div class="layer bottom">
-        <div class="layer-bar"></div>
-        <div class="layer-body">
-          <span class="layer-label">Aggregation</span>
-          <span class="layer-desc">public fact-check data, normalized and indexed</span>
-        </div>
-      </div>
-    </div>
-
-    <p>The infrastructure underneath is open and auditable. The verdicts come from specialists who do not work for the platform. Each verdict carries the publisher's attribution back to its source.</p>
+    <p>The infrastructure underneath is open and auditable. The specialists producing verdicts do not work for the platform, and each verdict carries the credentials and signature of the specialist who issued it.</p>
 
     <blockquote class="pullquote">Civic infrastructure underneath, a working business on top of it.</blockquote>
 
@@ -318,9 +243,9 @@
       <p class="portrait-caption">Mark Biesterfeld</p>
     </div>
 
-    <p>I trained as an opera singer, then moved into music education and nonprofit leadership. I co-direct the Colorado Institute of Music with my wife Leah. Most of what I do there is the slow work of building small civic institutions: the kind that run on small staffs and committed boards, and don't last unless someone keeps showing up.</p>
+    <p>I trained as an opera singer, then moved into music education and nonprofit leadership. I co-direct the Colorado Institute of Music with my wife Leah. Most of what I do there is the slow work of building small civic institutions: the kind that run on modest staffs and committed boards, and that endure only because someone keeps showing up for them.</p>
 
-    <p>That work taught me something specific. When civic infrastructure exists, a community has somewhere to anchor the things that need anchoring. When it doesn't, those things drift, and trust gets cheap. Image verification is one of those things now. It needs an institution underneath it, and one doesn't exist yet.</p>
+    <p>That work taught me something specific. When civic infrastructure exists, a community has a place to anchor what needs anchoring. When it doesn't, those things drift, and trust thins. Image verification is one of those things now. It needs an institution underneath it, and none exists yet.</p>
 
     <p>I'm not an OSINT practitioner or a digital forensics specialist. My role is the organizer and builder. The verification work itself belongs to credentialed practitioners. My job is to give them a place to do it that lasts.</p>
   </section>
