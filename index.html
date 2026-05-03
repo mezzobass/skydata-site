@@ -130,22 +130,40 @@
     color: var(--ink);
   }
 
-  /* CTA button */
-  .cta {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 11px 22px;
-    background: var(--accent);
-    color: #ffffff;
-    border: none;
+  /* ITP logo as link */
+  .logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin: 12px 0 4px;
+    text-decoration: none;
     border-bottom: none;
-    border-radius: 6px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
+    padding: 6px 0;
   }
-  .cta:hover { background: #1e3a8a; border-bottom: none; }
+  .logo-link:hover { border-bottom: none; }
+  .logo-link svg.lockup {
+    display: block;
+    height: 44px;
+    width: auto;
+  }
+  .logo-link .arrow {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 20px;
+    color: var(--accent);
+    font-weight: 600;
+    transition: transform 0.18s ease;
+    line-height: 1;
+  }
+  .logo-link:hover .arrow { transform: translateX(4px); }
+
+  /* Inline footer mark */
+  .footer-mark {
+    display: inline-block;
+    vertical-align: -3px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
 
   /* About section: portrait + prose */
   .portrait-wrap {
@@ -229,7 +247,18 @@
 
     <blockquote class="pullquote">Civic infrastructure underneath, a working business on top of it.</blockquote>
 
-    <p><a class="cta" href="https://imagetrustprotocol.world">Image Trust Protocol →</a></p>
+    <p>
+      <a class="logo-link" href="https://imagetrustprotocol.world" aria-label="Visit Image Trust Protocol">
+        <svg class="lockup" xmlns="http://www.w3.org/2000/svg" width="280" height="48" viewBox="0 0 280 48" role="img">
+          <title>Image Trust Protocol</title>
+          <rect x="0" y="0" width="48" height="48" rx="10" fill="#1e40af"/>
+          <rect x="11" y="11" width="22" height="22" rx="2" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+          <rect x="20" y="20" width="22" height="22" rx="2" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+          <text x="62" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="600" fill="#1f2937" letter-spacing="-0.3">Image Trust Protocol</text>
+        </svg>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </p>
   </section>
 
   <section>
@@ -249,7 +278,7 @@
   </section>
 
   <footer class="corporate">
-    <p><strong>Skydata.1 LLC</strong> &nbsp;·&nbsp; Legal entity behind Image Trust Protocol</p>
+    <p><strong>Skydata.1 LLC</strong> &nbsp;·&nbsp; Legal entity behind <svg class="footer-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><rect x="0" y="0" width="48" height="48" rx="10" fill="#1e40af"/><rect x="11" y="11" width="22" height="22" rx="2" fill="none" stroke="#ffffff" stroke-width="2.4"/><rect x="20" y="20" width="22" height="22" rx="2" fill="none" stroke="#ffffff" stroke-width="2.4"/></svg>Image Trust Protocol</p>
     <p><a href="mailto:info@skydata.one">info@skydata.one</a></p>
   </footer>
 
